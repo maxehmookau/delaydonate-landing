@@ -1,76 +1,159 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.row {
+  padding-top: 3%;
+  padding-bottom: 3%; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; }
+
+.title--massive {
+  font-size: 1.5rem; }
+  @media (min-width: 760px) {
+    .title--massive {
+      font-size: 2.5rem; } }
+  @media (min-width: 1000px) {
+    .title--massive {
+      font-size: 3.75rem; } }
+
+.align-center {
+  text-align: center; }
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-}
+  color: #4A4A4A; }
 
-#logo-header {
-  width: 50%;
-  margin: auto;
+.logo-header {
   text-align: center;
-}
+  padding-top: 2%;
+  padding-bottom: 2%; }
+  .logo-header img {
+    max-width: 240px; }
 
-#logo-header > img {
-  height: 75px;
-}
+.masthead {
+  background-color: #EAC751;
+  background-image: url("../img/2x_tracks.png");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15%;
+  text-align: center; }
 
-#masthead {
-  background: #EAC751;
-  padding: 80px;
-}
+.masthead__title, .signup__subtitle {
+  opacity: 0.8; }
 
-#title {
-  padding: 0 50px 50px 50px;
-  margin: auto;
-  width: 50%;
-  text-align: center;
-  color: #897B4C;
-  font-size: 1.5em;
-}
-
-#subtitle {
-  text-align: center;
-  margin: auto;
-  width: 85%;
-  font-size: 2.5em;
+.masthead__subtitle, .signup__title {
+  color: white;
   font-weight: 600;
-  color: white;
-}
+  font-size: 1.25rem; }
+  @media (min-width: 760px) {
+    .masthead__subtitle, .signup__title {
+      font-size: 2.5em; } }
 
-#explainer {
-  color: #4A4A4A;
-}
+.explainer {
+  max-width: 800px;
+  padding-top: 5%;
+  padding-bottom: 5%; }
+  @media (min-width: 760px) {
+    .explainer {
+      border-left: 20px solid #9E999F;
+      margin-left: 40px;
+      margin-right: 40px; } }
+  @media (min-width: 1000px) {
+    .explainer {
+      margin-left: auto;
+      margin-right: auto; } }
 
-#explainer > .title {
-  text-align: center;
-  font-size: 2em;
-}
+.explainer__list {
+  padding-right: 5%; }
+  @media (min-width: 760px) {
+    .explainer__list {
+      padding-right: 0;
+      counter-reset: li;
+      /* Initiate a counter */
+      padding-left: 0;
+      /* Remove the default left padding */ } }
 
-#signup {
-  background: #DA707C;
-  color: white;
-  padding: 75px;
-  text-align: center;
-}
+.explainer__item {
+  font-size: 1.25rem;
+  margin-bottom: 3%; }
+  @media (min-width: 760px) {
+    .explainer__item {
+      font-size: 1.75rem;
+      position: relative;
+      /* Create a positioning context */
+      margin: 0 0 5% 2em;
+      /* Give each list item a left margin to make room for the numbers */
+      padding: 4px 8px;
+      /* Add some spacing around the content */
+      list-style: none;
+      /* Disable the normal item numbering */ }
+      .explainer__item:after {
+        content: counter(li);
+        /* Use the counter as content */
+        counter-increment: li;
+        /* Increment the counter by 1 */
+        /* Position and style the number */
+        position: absolute;
+        top: -2px;
+        left: -105px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        margin-right: 80px;
+        border: 3px solid white;
+        border-radius: 40px;
+        color: #fff;
+        background: #E9C751;
+        font-weight: bold;
+        text-align: center; } }
 
-#signup > h3 {
-  color: #665254;
-}
+.signup {
+  background-color: #DB707D;
+  background-image: url("../img/2x_tracks.png");
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5%;
+  text-align: center; }
+  @media (min-width: 760px) {
+    .signup {
+      padding-top: 10%;
+      padding-bottom: 10%; } }
+  @media (min-width: tablet) {
+    .signup {
+      padding-top: 10%;
+      padding-bottom: 10%; } }
 
 #mce-EMAIL {
   height: 50px;
-  font-size: 3em;
-}
+  font-size: 1.5em;
+  padding: 6px;
+  width: 100%;
+  max-width: 300px; }
 
 .primary-btn {
-  background-color: #EAC751;
-  border: none;
-  color: #665254;
-  padding: 15px 32px;
+  border: 6px solid #AB616A;
+  color: #DB707D;
+  background: white;
+  border-radius: 58px;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   display: inline-block;
-  font-size: 16px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 58px;
+  height: 58px;
+  line-height: 45px;
   font-weight: 600;
-  font-size: 2em;
-}
+  font-size: 1.25rem; }
+
+/*# sourceMappingURL=style.css.map */
