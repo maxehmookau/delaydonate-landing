@@ -1,0 +1,221 @@
+// Vars
+
+// Colours
+$red: #DB707D;
+$yellow: #E9C751;
+$grey: #4A4A4A;
+// Breakpoints
+$mobile-max: 760px;
+$tablet: 760px;
+$desk: 1000px;
+$desk--wide: 1400px;
+$desk--extra-wide: 1600px;
+
+// Layout
+
+* {
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+// Breakpoints
+@mixin break($point) {
+  @if $point == desk--extra-wide {
+    @media (min-width: $desk--extra-wide) { @content; }
+  }
+  @else if $point == desk--wide {
+    @media (min-width: $desk--wide) { @content; }
+  }
+  @else if $point == desk {
+    @media (min-width: $desk) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: $tablet)  { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: $mobile-max)  { @content; }
+  }
+  @media (min-width: $point)  { @content; }
+}
+
+// Typography
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+.title--massive {
+  font-size: 1.5rem;
+  @include break($tablet) {
+    font-size: 2.5rem;
+  }
+  @include break($desk) {
+    font-size: 3.75rem;
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: $grey;
+}
+
+
+//
+// Header
+//
+
+.logo-header {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  img {
+    max-width: 240px;
+  }
+}
+
+
+//
+// Masthead
+//
+
+.masthead {
+  background-color: #EAC751;
+  background-image: url('../img/2x_tracks.png');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15%;
+  text-align: center;
+}
+
+.masthead__title, .signup__subtitle {
+  opacity: 0.8;
+}
+
+.masthead__subtitle, .signup__title {
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+  @include break($tablet) {
+    font-size: 2.5em;
+  }
+}
+
+
+//
+// Explainer
+//
+
+.explainer {
+  max-width: 800px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  @include break($tablet) {
+    border-left: 20px solid #9E999F;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  @include break($desk) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.explainer__list {
+  padding-right: 5%;
+  @include break($tablet) {
+    padding-right: 0;
+    counter-reset:li; /* Initiate a counter */
+    padding-left:0; /* Remove the default left padding */
+  }
+}
+
+.explainer__item {
+  font-size: 1.25rem;
+  margin-bottom: 3%;
+  @include break($tablet) {
+    font-size: 1.75rem;
+    position:relative; /* Create a positioning context */
+    margin:0 0 5% 2em; /* Give each list item a left margin to make room for the numbers */
+    padding:4px 8px; /* Add some spacing around the content */
+    list-style:none; /* Disable the normal item numbering */
+    &:after {
+      content:counter(li); /* Use the counter as content */
+      counter-increment:li; /* Increment the counter by 1 */
+      /* Position and style the number */
+      position:absolute;
+      top: -2px;
+      left: -105px;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      margin-right: 80px;
+      border: 3px solid white;
+      border-radius: 40px;
+      color:#fff;
+      background:$yellow;
+      font-weight: bold;
+      text-align:center;
+    }
+  }
+}
+
+
+//
+// Sign up
+//
+
+.signup {
+  background-color: $red;
+  background-image: url('../img/2x_tracks.png');
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5%;
+  text-align: center;
+  @include break(tablet) {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
+
+#mce-EMAIL {
+  height: 50px;
+  font-size: 1.5em;
+  padding: 6px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.primary-btn {
+  $diam: 58px;
+  border: 6px solid #AB616A;
+  color: $red;
+  background: white;
+  border-radius: $diam;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: $diam; height: $diam;
+  line-height: 45px;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
